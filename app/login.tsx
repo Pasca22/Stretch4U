@@ -2,7 +2,6 @@ import StyledButton from "@/components/StyledButton";
 import { Colors } from "@/constants/Colors";
 import { LOGIN, NO_ACCOUNT, SIGNUP, TITLE } from "@/constants/Text";
 import { useAuth } from "@/services/auth-context";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Link, router } from "expo-router";
 import React from "react";
 import {
