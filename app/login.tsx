@@ -33,7 +33,7 @@ const Login = () => {
       alert("Invalid username or password");
       return;
     }
-    router.replace("/");
+    router.replace("");
   };
 
   return (

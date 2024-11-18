@@ -38,7 +38,7 @@ const SignUp = () => {
       alert("Username already exists");
       return;
     }
-    router.replace("/");
+    router.replace("");
   };
 
   return (
