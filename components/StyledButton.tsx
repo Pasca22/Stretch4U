@@ -1,4 +1,5 @@
 import { Colors } from "@/constants/Colors";
+import { useLoadFonts } from "@/hooks/useLoadFonts";
 import { TouchableOpacity } from "react-native";
 import { Text, StyleSheet } from "react-native";
 
@@ -9,6 +10,12 @@ type ButtonProps = {
 };
 
 const StyledButton = ({ onPress, title, type }: ButtonProps) => {
+  const fontsLoaded = useLoadFonts();
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   if (type === "secondary") {
     return (
       <TouchableOpacity onPress={onPress} style={styles.secondaryButton}>
@@ -35,37 +42,40 @@ const StyledButton = ({ onPress, title, type }: ButtonProps) => {
 const styles = StyleSheet.create({
   primaryButton: {
     alignItems: "center",
-    backgroundColor: Colors.primaryGreen,
+    backgroundColor: Colors.primary,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 30,
     marginVertical: 15,
   },
   primaryButtonText: {
+    fontFamily: "OpenSans",
     fontSize: 16,
     color: "#FFFFFF",
   },
   secondaryButton: {
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: Colors.secondary,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 30,
     marginTop: 15,
   },
   secondaryButtonText: {
+    fontFamily: "OpenSans",
     fontSize: 16,
-    color: "#000",
+    color: "#fff",
   },
   bigButton: {
     alignItems: "center",
-    backgroundColor: Colors.primaryGreen,
+    backgroundColor: Colors.primary,
     paddingVertical: 10,
     paddingHorizontal: 60,
     borderRadius: 30,
     marginVertical: 15,
   },
   bigButtonText: {
+    fontFamily: "OpenSans",
     fontSize: 16,
     color: "#FFFFFF",
   },

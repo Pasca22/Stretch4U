@@ -1,5 +1,7 @@
 export const Colors = {
-  background: "rgb(215, 248, 183)",
-  tabBackground: "#88b388",
-  primaryGreen: "#1A3405",
+  text: "#111512",
+  background: "#f9fcfa",
+  primary: "#18C34F",
+  secondary: "#0B3D5E",
+  accent: "#58dd82",
 };

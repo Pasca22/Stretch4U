@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const BASE_URL = "http://192.168.0.127:5259/api/users";
+import { Platform } from "react-native";
+
+export const BASE_URL =
+  Platform.OS === "web"
+    ? "http://localhost:5259/api/users"
+    : "http://192.168.0.127:5259/api/users";
 
 export const loginAPI = async (username: string, password: string) => {
   const response = await axios

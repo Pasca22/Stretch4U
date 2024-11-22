@@ -6,11 +6,17 @@ import Profile from "./profile";
 import ChatBot from "./chatbot";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
+import { useLoadFonts } from "@/hooks/useLoadFonts";
 
 const Tab = createBottomTabNavigator();
 
 const AppLayout = () => {
   const { isAuthenticated } = useAuth();
+  const fontsLoaded = useLoadFonts();
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   if (!isAuthenticated) {
     return <Redirect href="/login" />;
@@ -39,10 +45,11 @@ const AppLayout = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: Colors.primaryGreen,
+        tabBarActiveTintColor: Colors.secondary,
         tabBarInactiveTintColor: "grey",
         tabBarStyle: {
-          backgroundColor: "white",
+          backgroundColor: Colors.background,
+          fontFamily: "OpenSans",
         },
         headerShown: false,
       })}

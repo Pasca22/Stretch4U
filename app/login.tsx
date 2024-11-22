@@ -1,6 +1,7 @@
 import StyledButton from "@/components/StyledButton";
 import { Colors } from "@/constants/Colors";
 import { LOGIN, NO_ACCOUNT, SIGNUP, TITLE } from "@/constants/Text";
+import { useLoadFonts } from "@/hooks/useLoadFonts";
 import { useAuth } from "@/services/auth-context";
 import { Link, router } from "expo-router";
 import React from "react";
@@ -17,6 +18,11 @@ const Login = () => {
   const { login } = useAuth();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const fontsLoaded = useLoadFonts();
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const handleLogin = async () => {
     if (!username || !password) {
@@ -33,7 +39,7 @@ const Login = () => {
       alert("Invalid username or password");
       return;
     }
-    router.replace("");
+    router.replace("/");
   };
 
   return (
@@ -56,7 +62,7 @@ const Login = () => {
         placeholderTextColor="#ddd"
         secureTextEntry={true}
       />
-      <Text>
+      <Text style={styles.noAccountMessage}>
         {NO_ACCOUNT}
         <Link href="/signup" style={styles.signup} replace>
           {SIGNUP}
@@ -79,10 +85,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 50,
     fontWeight: "bold",
+    fontFamily: "OpenSans",
     marginBottom: 5,
   },
   subtitle: {
     fontSize: 40,
+    fontFamily: "OpenSans",
     marginBottom: 5,
   },
   separator: {
@@ -99,9 +107,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "#fff",
     color: "#000",
+    fontFamily: "OpenSans",
   },
   signup: {
+    fontFamily: "OpenSans",
     textDecorationLine: "underline",
+  },
+  noAccountMessage: {
+    fontFamily: "OpenSans",
   },
 });
 

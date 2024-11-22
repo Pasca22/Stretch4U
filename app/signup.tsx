@@ -38,7 +38,7 @@ const SignUp = () => {
       alert("Username already exists");
       return;
     }
-    router.replace("");
+    router.replace("/");
   };
 
   return (
@@ -69,7 +69,7 @@ const SignUp = () => {
         placeholderTextColor="#ddd"
         secureTextEntry={true}
       />
-      <Text>
+      <Text style={styles.hasAccountMessage}>
         {EXISTING_ACCOUNT}
         <Link href="/login" style={styles.signup} replace>
           {LOGIN}
@@ -92,10 +92,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 50,
     fontWeight: "bold",
+    fontFamily: "OpenSans",
     marginBottom: 5,
   },
   subtitle: {
     fontSize: 40,
+    fontFamily: "OpenSans",
     marginBottom: 5,
   },
   separator: {
@@ -112,9 +114,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "#fff",
     color: "#000",
+    fontFamily: "OpenSans",
   },
   signup: {
+    fontFamily: "OpenSans",
     textDecorationLine: "underline",
+  },
+  hasAccountMessage: {
+    fontFamily: "OpenSans",
   },
 });
 
