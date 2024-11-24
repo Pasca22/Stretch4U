@@ -5,6 +5,7 @@ import { useEffect } from "react";
 export const useLoadFonts = () => {
   const [fontsLoaded] = useFonts({
     OpenSans: require("../assets/fonts/OpenSans-Regular.ttf"),
+    OpenSans_Bold: require("../assets/fonts/OpenSans-Bold.ttf"),
   });
 
   useEffect(() => {

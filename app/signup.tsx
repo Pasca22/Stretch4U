@@ -91,8 +91,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 50,
-    fontWeight: "bold",
-    fontFamily: "OpenSans",
+    fontFamily: "OpenSans_Bold",
     marginBottom: 5,
   },
   subtitle: {

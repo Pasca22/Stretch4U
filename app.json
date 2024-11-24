@@ -31,7 +31,10 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/OpenSans-Regular.ttf"]
+          "fonts": [
+            "./assets/fonts/OpenSans-Regular.ttf",
+            "./assets/fonts/OpenSans-Bold.ttf"
+          ]
         }
       ]
     ],

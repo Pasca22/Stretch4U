@@ -36,3 +36,17 @@ export const signupAPI = async (
     });
   return response;
 };
+
+export const getUserData = async (userId: number, token: string) => {
+  const response = await axios
+    .get(`${BASE_URL}/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .catch((error) => {
+      console.log(error.response);
+      return error.response;
+    });
+  return response.data;
+};

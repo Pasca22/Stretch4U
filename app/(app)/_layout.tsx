@@ -45,11 +45,13 @@ const AppLayout = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: Colors.secondary,
+        tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: "grey",
         tabBarStyle: {
           backgroundColor: Colors.background,
-          fontFamily: "OpenSans",
+        },
+        tabBarLabelStyle: {
+          fontFamily: "OpenSans_Bold",
         },
         headerShown: false,
       })}
