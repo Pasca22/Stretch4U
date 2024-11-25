@@ -10,7 +10,6 @@ import {
   getMessages,
   sendMessageToChatbot,
 } from "@/web-api/messages-endpoints";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useCallback, useEffect, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import {
@@ -29,34 +28,6 @@ const ChatBot: React.FC = () => {
   if (!fontsLoaded) {
     return null;
   }
-
-  // const loadMessages = () => {
-  //   const storedMessages = user?.messages.flatMap((message) => {
-  //     return [
-  //       {
-  //         _id: `${message.id}-response`,
-  //         text: message.response,
-  //         createdAt: new Date(message.createdAt),
-  //         user: {
-  //           _id: 0,
-  //         },
-  //       },
-  //       {
-  //         _id: `${message.id}-content`,
-  //         text: message.content,
-  //         createdAt: new Date(message.createdAt),
-  //         user: {
-  //           _id: user.id,
-  //         },
-  //       },
-  //     ];
-  //   });
-  //   if (storedMessages) {
-  //     setMessages((prevMessages) =>
-  //       GiftedChat.append(prevMessages, storedMessages)
-  //     );
-  //   }
-  // };
 
   useEffect(() => {
     const loadMessages = async () => {

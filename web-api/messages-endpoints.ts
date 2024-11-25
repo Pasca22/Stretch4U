@@ -48,21 +48,3 @@ export const sendMessageToChatbot = async (
     });
   return response.data;
 };
-
-const deleteOldMessages = async (userId: number, token: string) => {
-  await axios
-    .delete(`${BASE_URL}/${userId}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
-};
-
-export const scheduleDeleteOldMessages = (userId: number, token: string) => {
-  setInterval(() => {
-    deleteOldMessages(userId, token);
-  }, 1000 * 60 * 60);
-};

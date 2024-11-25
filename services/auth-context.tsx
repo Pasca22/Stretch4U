@@ -1,5 +1,3 @@
-// services/auth-context.tsx
-import { scheduleDeleteOldMessages } from "@/web-api/messages-endpoints";
 import { getUserData, loginAPI, signupAPI } from "@/web-api/users-endpoints";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, {
